@@ -1,0 +1,24 @@
+# aiterm configuration
+debounce_ms = 400          # quiet period after the last change before analysing
+max_wait_ms = 3000         # analyse at least this often while typing continues
+cooldown_seconds = 300     # do not re-notify the same problem within this window
+watch_backend = "auto"     # auto | watchdog (inotify) | polling
+languages = ["python", "javascript", "typescript", "c", "cpp", "java", "kotlin", "rust"]
+use_linters = true         # use ruff etc. when installed
+
+[ai]
+enabled = true            # set true to allow AI explanations (redacted context only)
+provider = "gemini"        # gemini | openai | local | mock
+model = "gemini-3.5-flash"                 # e.g. a Gemini/OpenAI model id, or an Ollama model
+temperature = 0.1
+api_key_env = "GEMINI_API_KEY"   # env var NAME; never put the key in this file
+auto = false               # false = explain on demand (Explain button / `aiterm explain`)
+
+[notifications]
+errors = true
+warnings = true
+style = false
+performance = false
+terminal = true
+desktop = true
+max_per_batch = 5

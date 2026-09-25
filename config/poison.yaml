@@ -1,0 +1,56 @@
+# Example VisionTrack configuration. Run:
+#   visiontrack inspect-config config/example.yaml
+#   visiontrack run --source examples/test_video.mp4 --config config/example.yaml --headless
+
+source:
+  processing_fps: null          # null = process every frame
+  assumed_fps: 30.0
+
+preprocessing:
+  resize_width: 320
+  gaussian_blur_kernel: 5
+
+motion:
+  method: running_average
+  threshold: 25
+  min_area: 200
+  morphology:
+    open_iterations: 1
+    dilate_iterations: 2
+
+tracking:
+  max_disappeared: 0
+  max_distance: 80.0
+
+zones:
+  entrance:
+    polygon:
+      - [80, 60]
+      - [260, 60]
+      - [260, 200]
+      - [80, 200]
+    dwell_seconds: 2.0
+
+lines:
+  midline:
+    start: [160, 0]
+    end: [160, 240]
+    direction: any
+
+events:
+  cooldowns:
+    LINE_CROSSED: 1.0
+    VELOCITY_EXCEEDED: 2.0
+
+display:
+  enabled: false
+  show_zones: true
+  show_tracks: true
+
+logging:
+  level: INFO
+  console_events: true
+  jsonl_path: null
+
+ml:
+  enabled: false

@@ -1,0 +1,5 @@
+{"event_id":"evt-000001","event_type":"MOTION_STARTED","timestamp":0.2333,"frame_number":7,"source":"examples/test_video.mp4"}
+{"event_id":"evt-000002","event_type":"OBJECT_ENTERED_ZONE","timestamp":1.2667,"frame_number":38,"source":"examples/test_video.mp4","track_id":2,"zone":"entrance","bbox":[49,97,90,37]}
+{"event_id":"evt-000003","event_type":"ZONE_ACTIVATED","timestamp":1.2667,"frame_number":38,"source":"examples/test_video.mp4","zone":"entrance"}
+{"event_id":"evt-000004","event_type":"LINE_CROSSED","timestamp":2.2,"frame_number":66,"source":"examples/test_video.mp4","track_id":2,"bbox":[119,97,90,37],"metadata":{"line":"midline","direction":"negative"}}
+{"event_id":"evt-000005","event_type":"MOTION_ACTIVE","timestamp":2.2333,"frame_number":67,"source":"examples/test_video.mp4"}
